@@ -24,7 +24,6 @@
 		C45C28942BFB95820033CCD5 /* TableListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45C28932BFB95820033CCD5 /* TableListVC.swift */; };
 		C45C28962BFB95A60033CCD5 /* CollectionListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45C28952BFB95A60033CCD5 /* CollectionListVC.swift */; };
 		C45C289C2BFB95EA0033CCD5 /* BaseVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45C289B2BFB95EA0033CCD5 /* BaseVM.swift */; };
-		C45C289F2BFB96120033CCD5 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45C289E2BFB96120033CCD5 /* BaseVC.swift */; };
 		C45C28A22BFB96410033CCD5 /* BaseCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45C28A12BFB96410033CCD5 /* BaseCVCell.swift */; };
 		C45C28AA2BFB96BE0033CCD5 /* ListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45C28A92BFB96BE0033CCD5 /* ListVM.swift */; };
 		C45C28AD2BFB96DD0033CCD5 /* ListItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45C28AC2BFB96DD0033CCD5 /* ListItemModel.swift */; };
@@ -75,7 +74,6 @@
 		C45C28932BFB95820033CCD5 /* TableListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableListVC.swift; sourceTree = "<group>"; };
 		C45C28952BFB95A60033CCD5 /* CollectionListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionListVC.swift; sourceTree = "<group>"; };
 		C45C289B2BFB95EA0033CCD5 /* BaseVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVM.swift; sourceTree = "<group>"; };
-		C45C289E2BFB96120033CCD5 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 		C45C28A12BFB96410033CCD5 /* BaseCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCVCell.swift; sourceTree = "<group>"; };
 		C45C28A92BFB96BE0033CCD5 /* ListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVM.swift; sourceTree = "<group>"; };
 		C45C28AC2BFB96DD0033CCD5 /* ListItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemModel.swift; sourceTree = "<group>"; };
@@ -150,7 +148,6 @@
 				C45C285B2BF798C20033CCD5 /* Assets.xcassets */,
 				C45C285D2BF798C20033CCD5 /* LaunchScreen.storyboard */,
 				C45C28602BF798C20033CCD5 /* Info.plist */,
-				C45C28852BF79F240033CCD5 /* BaseVC.swift */,
 			);
 			path = "Swift-Components";
 			sourceTree = "<group>";
@@ -200,7 +197,7 @@
 		C45C289D2BFB96070033CCD5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				C45C289E2BFB96120033CCD5 /* BaseVC.swift */,
+				C45C28852BF79F240033CCD5 /* BaseVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -511,7 +508,6 @@
 				C45C28942BFB95820033CCD5 /* TableListVC.swift in Sources */,
 				C45C28862BF79F240033CCD5 /* BaseVC.swift in Sources */,
 				C45C28962BFB95A60033CCD5 /* CollectionListVC.swift in Sources */,
-				C45C289F2BFB96120033CCD5 /* BaseVC.swift in Sources */,
 				C45C28CD2BFB98A80033CCD5 /* PopupHandlable.swift in Sources */,
 				C45C28C52BFB981B0033CCD5 /* HColoredSpacerView.swift in Sources */,
 				C45C28C32BFB98070033CCD5 /* VColoredSpacerView.swift in Sources */,
