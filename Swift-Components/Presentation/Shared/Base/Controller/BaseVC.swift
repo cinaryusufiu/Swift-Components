@@ -216,7 +216,6 @@ extension BaseVC {
             scrollView.removeFromSuperview()
         }
         view.addSubview(scrollView)
-        view.addSubview(scrollView)
         scrollView.addSubview(contentView)
         contentView.addSubview(stackView)
         

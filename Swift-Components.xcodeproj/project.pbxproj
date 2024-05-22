@@ -38,6 +38,10 @@
 		C45C28C92BFB985B0033CCD5 /* VScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45C28C82BFB985B0033CCD5 /* VScrollView.swift */; };
 		C45C28CB2BFB98700033CCD5 /* ColoredView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45C28CA2BFB98700033CCD5 /* ColoredView.swift */; };
 		C45C28CD2BFB98A80033CCD5 /* PopupHandlable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45C28CC2BFB98A80033CCD5 /* PopupHandlable.swift */; };
+		C4A8F4572BFCF18A00347742 /* FormField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A8F4562BFCF18A00347742 /* FormField.swift */; };
+		C4A8F45A2BFCF88A00347742 /* BaseLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A8F4592BFCF88A00347742 /* BaseLabel.swift */; };
+		C4A8F45C2BFD0FE600347742 /* FormFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A8F45B2BFD0FE600347742 /* FormFieldView.swift */; };
+		C4A8F45E2BFD122000347742 /* EmailFormField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A8F45D2BFD122000347742 /* EmailFormField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +92,10 @@
 		C45C28C82BFB985B0033CCD5 /* VScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VScrollView.swift; sourceTree = "<group>"; };
 		C45C28CA2BFB98700033CCD5 /* ColoredView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredView.swift; sourceTree = "<group>"; };
 		C45C28CC2BFB98A80033CCD5 /* PopupHandlable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupHandlable.swift; sourceTree = "<group>"; };
+		C4A8F4562BFCF18A00347742 /* FormField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormField.swift; sourceTree = "<group>"; };
+		C4A8F4592BFCF88A00347742 /* BaseLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLabel.swift; sourceTree = "<group>"; };
+		C4A8F45B2BFD0FE600347742 /* FormFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormFieldView.swift; sourceTree = "<group>"; };
+		C4A8F45D2BFD122000347742 /* EmailFormField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailFormField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +180,8 @@
 		C45C28922BFB95640033CCD5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C45C28B22BFB97100033CCD5 /* Collection */,
+				C45C28B12BFB970B0033CCD5 /* Table */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -243,6 +253,8 @@
 		C45C28A72BFB96960033CCD5 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				C4A8F4582BFCF85400347742 /* Label */,
+				C4A8F4552BFCF17A00347742 /* FormField */,
 				C45C28CA2BFB98700033CCD5 /* ColoredView.swift */,
 				C45C28D02BFB98F70033CCD5 /* ScrollView */,
 				C45C28CF2BFB98E90033CCD5 /* Button */,
@@ -306,8 +318,6 @@
 				C45C28922BFB95640033CCD5 /* Controller */,
 				C45C28A82BFB96B20033CCD5 /* ViewModel */,
 				C45C28AB2BFB96D20033CCD5 /* Model */,
-				C45C28B12BFB970B0033CCD5 /* Table */,
-				C45C28B22BFB97100033CCD5 /* Collection */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -362,6 +372,24 @@
 				C45C28C82BFB985B0033CCD5 /* VScrollView.swift */,
 			);
 			path = ScrollView;
+			sourceTree = "<group>";
+		};
+		C4A8F4552BFCF17A00347742 /* FormField */ = {
+			isa = PBXGroup;
+			children = (
+				C4A8F4562BFCF18A00347742 /* FormField.swift */,
+				C4A8F45B2BFD0FE600347742 /* FormFieldView.swift */,
+				C4A8F45D2BFD122000347742 /* EmailFormField.swift */,
+			);
+			path = FormField;
+			sourceTree = "<group>";
+		};
+		C4A8F4582BFCF85400347742 /* Label */ = {
+			isa = PBXGroup;
+			children = (
+				C4A8F4592BFCF88A00347742 /* BaseLabel.swift */,
+			);
+			path = Label;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -505,8 +533,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4A8F45A2BFCF88A00347742 /* BaseLabel.swift in Sources */,
 				C45C28942BFB95820033CCD5 /* TableListVC.swift in Sources */,
 				C45C28862BF79F240033CCD5 /* BaseVC.swift in Sources */,
+				C4A8F4572BFCF18A00347742 /* FormField.swift in Sources */,
 				C45C28962BFB95A60033CCD5 /* CollectionListVC.swift in Sources */,
 				C45C28CD2BFB98A80033CCD5 /* PopupHandlable.swift in Sources */,
 				C45C28C52BFB981B0033CCD5 /* HColoredSpacerView.swift in Sources */,
@@ -519,7 +549,9 @@
 				C45C28BE2BFB97D60033CCD5 /* VSpacerView.swift in Sources */,
 				C45C28AD2BFB96DD0033CCD5 /* ListItemModel.swift in Sources */,
 				C45C28BC2BFB97B60033CCD5 /* VStackView.swift in Sources */,
+				C4A8F45E2BFD122000347742 /* EmailFormField.swift in Sources */,
 				C45C28A22BFB96410033CCD5 /* BaseCVCell.swift in Sources */,
+				C4A8F45C2BFD0FE600347742 /* FormFieldView.swift in Sources */,
 				C45C28C02BFB97EB0033CCD5 /* HSpacerView.swift in Sources */,
 				C45C28C92BFB985B0033CCD5 /* VScrollView.swift in Sources */,
 				C45C28CB2BFB98700033CCD5 /* ColoredView.swift in Sources */,

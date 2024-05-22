@@ -6,8 +6,19 @@
 //
 
 import UIKit
+import RxSwift
 
-class BaseView: UIView {
+protocol BaseViewable {
+    func prepareUI()
+    func prepareStyleUI()
+    func configureLocalize()
+    func bindUI()
+    func updateUI()
+}
+
+class BaseView: UIView, BaseViewable {
+   
+    lazy var disposeBag = DisposeBag()
     
     init() {
         super.init(frame: .zero)
@@ -24,8 +35,10 @@ class BaseView: UIView {
         prepareInit()
     }
     
-    func prepareInit() {
-        
+    func prepareInit() { 
+        prepareUI()
+        prepareStyleUI()
+        configureLocalize()
     }
     
     func configureGesture() {
@@ -34,7 +47,15 @@ class BaseView: UIView {
         self.isUserInteractionEnabled = true
     }
     
-    @objc func handleTapGesture() {
-        
-    }
+    @objc func handleTapGesture() {}
+    
+    func prepareUI() {}
+    
+    func prepareStyleUI() {}
+    
+    func configureLocalize() {}
+    
+    func bindUI() {}
+    
+    func updateUI() {}
 }
