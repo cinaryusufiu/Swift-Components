@@ -39,7 +39,6 @@ class FormField: BaseView {
     
     var selectedValue: BehaviorSubject<String> = BehaviorSubject(value: "")
     private var config: Configuration?
-    private var validator: Observable<ValidationResult>?
     
     // MARK: - UI Properties
     
@@ -139,16 +138,14 @@ extension FormField {
     private func bindValidation(provider: ValidationProvider, trigger: PublishSubject<Void>?) {
         guard let trigger = trigger else { return }
         
-        validator = Observable.merge(
-            formField.textField.rx.controlEvent([.editingDidEnd, .editingChanged]).asObservable(),
-            trigger.asObservable()
-        )
+        Observable.merge( textField.didEditingChanged(),
+                          textField.didEndEditing(),
+                          trigger.asObservable())
         
         .flatMapLatest { [weak self] in
             let value = self?.formField.textField.text
             return Observable.just(self?.textField.validateText(value, with: provider) ?? .failure("Validation failed"))
-        }
-        validator?.subscribe(onNext: { [weak self] result in
+        }.subscribe(onNext: { [weak self] result in
             switch result {
             case .success:
                 self?.formField.hideError()

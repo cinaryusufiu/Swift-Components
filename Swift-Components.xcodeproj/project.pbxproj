@@ -253,9 +253,9 @@
 		C45C28A72BFB96960033CCD5 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				C45C28CA2BFB98700033CCD5 /* ColoredView.swift */,
 				C4A8F4582BFCF85400347742 /* Label */,
 				C4A8F4552BFCF17A00347742 /* FormField */,
-				C45C28CA2BFB98700033CCD5 /* ColoredView.swift */,
 				C45C28D02BFB98F70033CCD5 /* ScrollView */,
 				C45C28CF2BFB98E90033CCD5 /* Button */,
 				C45C28C12BFB97FC0033CCD5 /* Spacer */,
