@@ -56,16 +56,16 @@ final class HomeVC: BaseVC<HomeVM> {
         formFieldEmail.setSelectedValue("cinaryusufiu@gmail.com")
         
         Observable
-            .merge(formFieldEmail.textField.didEditingChanged(),
-                   formFieldNationalId.textField.didEditingChanged())
+            .merge(formFieldEmail.didEditingChanged(),
+                   formFieldNationalId.didEditingChanged())
             .subscribe(onNext: {
                 //Trigger'ın dinlendiği alan. isValid ile doğrulamaların yapılığ yapılmadığını görüntüleyebileceğiz
                 //formFieldEmail.isValid()
             }).disposed(by: disposeBag)
         
         Observable
-            .merge(formFieldEmail.textField.didEndEditing(),
-                   formFieldNationalId.textField.didEndEditing())
+            .merge(formFieldEmail.didEndEditing(),
+                   formFieldNationalId.didEndEditing())
             .subscribe(onNext: { [weak self] in
                 self?.view.endEditing(true)
             }).disposed(by: disposeBag)
@@ -76,12 +76,6 @@ final class HomeVC: BaseVC<HomeVM> {
         stackView.addArrangedSubview(VColoredSpacerView(height: 10, color: .white))
         stackView.addArrangedSubview(formFieldEmail)
         stackView.addArrangedSubview(formFieldNationalId)
-        stackView.addArrangedSubview(VColoredSpacerView(height: 120, color: .purple))
-        stackView.addArrangedSubview(VColoredSpacerView(height: 120, color: .red))
-        stackView.addArrangedSubview(VColoredSpacerView(height: 120, color: .purple))
-        stackView.addArrangedSubview(VColoredSpacerView(height: 120, color: .red))
-        stackView.addArrangedSubview(VColoredSpacerView(height: 120, color: .purple))
-        stackView.addArrangedSubview(VColoredSpacerView(height: 120, color: .red))
         stackView.addArrangedSubview(VColoredSpacerView(height: 120, color: .purple))
     }
 }

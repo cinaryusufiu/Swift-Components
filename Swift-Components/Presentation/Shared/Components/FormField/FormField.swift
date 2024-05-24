@@ -37,22 +37,22 @@ class FormField: BaseView {
     
     // MARK: - Properties
     
-    var selectedValue: BehaviorSubject<String> = BehaviorSubject(value: "")
     private var config: Configuration?
+    var selectedValue: BehaviorSubject<String> = BehaviorSubject(value: "")
     
     // MARK: - UI Properties
     
-    let formField: FormFieldView = FormFieldView()
+    private let formFieldView: FormFieldView = FormFieldView()
     
     var textField: UITextField {
-        return formField.textField
+        return formFieldView.textField
     }
     
     override func prepareUI() {
         super.prepareUI()
         
-        addSubview(formField)
-        formField.snp.makeConstraints { make in
+        addSubview(formFieldView)
+        formFieldView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
     }
@@ -82,7 +82,7 @@ extension FormField {
             return
         }
         
-        switch textField.validateText(value, with: provider) {
+        switch validateText(value, with: provider) {
         case .success:
             selectedValue.onNext(value)
             validationConfig.trigger?.onNext(())
@@ -95,7 +95,7 @@ extension FormField {
         guard let validationConfig = config?.validationConfig, let provider = validationConfig.provider else {
             return .success
         }
-        return textField.validateText(formField.textField.text, with: provider)
+        return validateText(formFieldView.textField.text, with: provider)
     }
 }
 
@@ -103,7 +103,7 @@ extension FormField {
     
     public func configure(with config: Configuration) {
         self.config = config
-        formField.config = config.textConfig
+        formFieldView.config = config.textConfig
         bindUI()
     }
 }
@@ -113,17 +113,17 @@ extension FormField {
     // MARK: - Private Functions
     
     private func bindHighlight() {
-        formField.textField.didBegin().subscribe(onNext: { [weak self] in
-            self?.formField.updateUIDidBeginEditing()
+        didBegin().subscribe(onNext: { [weak self] in
+            self?.formFieldView.updateUIDidBeginEditing()
         }).disposed(by: disposeBag)
         
-        formField.textField.didEndEditing().subscribe(onNext: { [weak self] in
-            self?.formField.updateUIDidEndEditing()
+        didEndEditing().subscribe(onNext: { [weak self] in
+            self?.formFieldView.updateUIDidEndEditing()
         }).disposed(by: disposeBag)
     }
     
     private func bindSelectedValue() {
-        formField.textField.rx.text.orEmpty
+        formFieldView.textField.rx.text.orEmpty
             .distinctUntilChanged()
             .bind(to: selectedValue)
             .disposed(by: disposeBag)
@@ -131,26 +131,26 @@ extension FormField {
         selectedValue
             .asObservable()
             .distinctUntilChanged()
-            .bind(to: formField.textField.rx.text)
+            .bind(to: formFieldView.textField.rx.text)
             .disposed(by: disposeBag)
     }
     
     private func bindValidation(provider: ValidationProvider, trigger: PublishSubject<Void>?) {
         guard let trigger = trigger else { return }
         
-        Observable.merge( textField.didEditingChanged(),
-                          textField.didEndEditing(),
-                          trigger.asObservable())
+        Observable.merge(didEditingChanged(),
+                         didEndEditing(),
+                         trigger.asObservable())
         
         .flatMapLatest { [weak self] in
-            let value = self?.formField.textField.text
-            return Observable.just(self?.textField.validateText(value, with: provider) ?? .failure("Validation failed"))
+            let value = self?.formFieldView.textField.text
+            return Observable.just(self?.validateText(value, with: provider) ?? .failure("Validation failed"))
         }.subscribe(onNext: { [weak self] result in
             switch result {
             case .success:
-                self?.formField.hideError()
+                self?.formFieldView.hideError()
             case .failure(let message):
-                self?.formField.showError()
+                self?.formFieldView.showError()
             }
         }).disposed(by: disposeBag)
     }
@@ -291,23 +291,23 @@ extension ValidationHandler {
     }
 }
 
-extension UITextField: ValidationHandler { }
+extension FormField: ValidationHandler {}
 
-extension UITextField {
+extension FormField {
     
     func didPressReturn() -> Observable<Void> {
-        return rx.controlEvent([.editingDidEndOnExit]).asObservable()
+        return textField.rx.controlEvent([.editingDidEndOnExit]).asObservable()
     }
     
     func didEndEditing() -> Observable<Void> {
-        return rx.controlEvent([.editingDidEnd]).asObservable()
+        return textField.rx.controlEvent([.editingDidEnd]).asObservable()
     }
     
     func didEditingChanged() -> Observable<Void> {
-        return rx.controlEvent([.editingChanged]).asObservable()
+        return textField.rx.controlEvent([.editingChanged]).asObservable()
     }
     
     func didBegin() -> Observable<Void> {
-        return rx.controlEvent([.editingDidBegin]).asObservable()
+        return textField.rx.controlEvent([.editingDidBegin]).asObservable()
     }
 }

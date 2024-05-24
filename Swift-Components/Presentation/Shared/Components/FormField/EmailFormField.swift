@@ -21,7 +21,7 @@ final class EmailFormField: FormField {
         
         super.configure(with: FormField.Configuration(validationConfig: validationConfig, textConfig: textConfig))
         
-        self.formField.textField.keyboardType = .emailAddress
+        self.textField.keyboardType = .emailAddress
     }
 }
 
@@ -39,6 +39,6 @@ final class NationalIDFormField: FormField {
         
         super.configure(with: FormField.Configuration(validationConfig: validationConfig, textConfig: textConfig))
         
-        self.formField.textField.keyboardType = .numberPad
+        self.textField.keyboardType = .numberPad
     }
 }
