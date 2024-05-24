@@ -55,14 +55,13 @@ final class FormFieldView: BaseView {
         return textField
     }()
     
-    // MARK: - Initialization
+    // MARK: - Override Functions
     
     override func prepareInit() {
         super.prepareInit()
         prepareUI()
+        bindUI()
     }
-    
-    // MARK: - Private Functions
     
     override func prepareUI() {
         super.prepareUI()
@@ -82,6 +81,27 @@ final class FormFieldView: BaseView {
         super.bindUI()
         textField.delegate = self
     }
+    
+    override func prepareStyleUI() {
+        super.prepareStyleUI()
+        labelTitle.textColor = .black
+        labelMessage.textColor = .gray
+        labelError.textColor = .red
+    }
+    
+    override func updateUI() {
+        super.updateUI()
+        
+        labelTitle.text = config?.title
+        labelMessage.text = config?.description
+        labelMessage.isHidden = config?.description == nil
+        
+        buttonRight.setTitle(config?.rightButtonTitle, for: .normal)
+        buttonRight.setImage(config?.rightButtonImage, for: .normal)
+        prepareTextFieldPlaceHolder()
+    }
+    
+    // MARK: - Private Functions
     
     private func prepareUIConstraints() {
         
@@ -106,12 +126,14 @@ final class FormFieldView: BaseView {
         }
     }
     
-    override func prepareStyleUI() {
-        super.prepareStyleUI()
-        labelTitle.textColor = .black
-        labelMessage.textColor = .gray
-        labelError.textColor = .red
+    private func prepareTextFieldPlaceHolder() {
+        guard let placeholder = config?.placeholder else { return }
+        let attributes = [NSAttributedString.Key.foregroundColor : UIColor.black.withAlphaComponent(0.5)]
+        textField.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: attributes)
     }
+}
+
+extension FormFieldView {
     
     func showError() {
         guard let errorMessage = config?.errorMessage else { return }
@@ -125,24 +147,6 @@ final class FormFieldView: BaseView {
         labelError.isHidden = true
         labelMessage.isHidden = labelMessage.text == nil
         viewContainer.layer.borderColor = UIColor.black.cgColor
-    }
-    
-    func prepareTextFieldPlaceHolder() {
-        guard let placeholder = config?.placeholder else { return }
-        let attributes = [NSAttributedString.Key.foregroundColor : UIColor.black.withAlphaComponent(0.5)]
-        textField.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: attributes)
-    }
-    
-    override func updateUI() {
-        super.updateUI()
-        
-        labelTitle.text = config?.title
-        labelMessage.text = config?.description
-        labelMessage.isHidden = config?.description == nil
-        
-        buttonRight.setTitle(config?.rightButtonTitle, for: .normal)
-        buttonRight.setImage(config?.rightButtonImage, for: .normal)
-        prepareTextFieldPlaceHolder()
     }
     
     func updateUIDidBeginEditing() {
