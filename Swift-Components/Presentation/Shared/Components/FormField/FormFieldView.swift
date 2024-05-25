@@ -38,7 +38,7 @@ final class FormFieldView: BaseView {
         return stackView
     }()
     
-    private let buttonRight: UIButton = {
+    let buttonRight: UIButton = {
         let button = UIButton(type: .custom)
         button.setImage(UIImage(named: "arrow-down-line"), for: .normal)
         return button

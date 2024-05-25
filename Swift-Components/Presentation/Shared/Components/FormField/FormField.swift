@@ -48,6 +48,10 @@ class FormField: BaseView {
         return formFieldView.textField
     }
     
+    var buttonRight: UIButton {
+        return formFieldView.buttonRight
+    }
+    
     override func prepareUI() {
         super.prepareUI()
         
