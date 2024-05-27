@@ -44,6 +44,13 @@
 		C4A8F45E2BFD122000347742 /* EmailFormField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A8F45D2BFD122000347742 /* EmailFormField.swift */; };
 		C4A8F4602C0225EA00347742 /* PasswordFormField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A8F45F2C0225EA00347742 /* PasswordFormField.swift */; };
 		C4A8F4622C02297700347742 /* NationalIDFormField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A8F4612C02297700347742 /* NationalIDFormField.swift */; };
+		C4A8F4682C04C2B800347742 /* SessionStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A8F4672C04C2B800347742 /* SessionStorage.swift */; };
+		C4A8F46C2C04D67F00347742 /* AppDelegate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A8F46B2C04D67F00347742 /* AppDelegate+Extension.swift */; };
+		C4A8F46F2C04DA9200347742 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A8F46E2C04DA9200347742 /* KeychainManager.swift */; };
+		C4A8F4722C04DAFA00347742 /* UserDefaultsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A8F4712C04DAFA00347742 /* UserDefaultsStorage.swift */; };
+		C4A8F4742C04DB1000347742 /* KeychainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A8F4732C04DB1000347742 /* KeychainStorage.swift */; };
+		C4A8F4772C04DC1100347742 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A8F4762C04DC1100347742 /* User.swift */; };
+		C4A8F47A2C04DC5000347742 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A8F4792C04DC5000347742 /* Token.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +107,13 @@
 		C4A8F45D2BFD122000347742 /* EmailFormField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailFormField.swift; sourceTree = "<group>"; };
 		C4A8F45F2C0225EA00347742 /* PasswordFormField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordFormField.swift; sourceTree = "<group>"; };
 		C4A8F4612C02297700347742 /* NationalIDFormField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NationalIDFormField.swift; sourceTree = "<group>"; };
+		C4A8F4672C04C2B800347742 /* SessionStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStorage.swift; sourceTree = "<group>"; };
+		C4A8F46B2C04D67F00347742 /* AppDelegate+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Extension.swift"; sourceTree = "<group>"; };
+		C4A8F46E2C04DA9200347742 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		C4A8F4712C04DAFA00347742 /* UserDefaultsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorage.swift; sourceTree = "<group>"; };
+		C4A8F4732C04DB1000347742 /* KeychainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStorage.swift; sourceTree = "<group>"; };
+		C4A8F4762C04DC1100347742 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C4A8F4792C04DC5000347742 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,8 +169,7 @@
 		C45C28512BF798C00033CCD5 /* Swift-Components */ = {
 			isa = PBXGroup;
 			children = (
-				C45C28522BF798C00033CCD5 /* AppDelegate.swift */,
-				C45C28A32BFB96710033CCD5 /* Presentation */,
+				C4A8F4632C04C27200347742 /* Application */,
 				C45C285B2BF798C20033CCD5 /* Assets.xcassets */,
 				C45C285D2BF798C20033CCD5 /* LaunchScreen.storyboard */,
 				C45C28602BF798C20033CCD5 /* Info.plist */,
@@ -330,6 +343,7 @@
 			isa = PBXGroup;
 			children = (
 				C45C28B52BFB977F0033CCD5 /* UINavigationController+Extension.swift */,
+				C4A8F46B2C04D67F00347742 /* AppDelegate+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -396,6 +410,77 @@
 				C4A8F4592BFCF88A00347742 /* BaseLabel.swift */,
 			);
 			path = Label;
+			sourceTree = "<group>";
+		};
+		C4A8F4632C04C27200347742 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				C45C28522BF798C00033CCD5 /* AppDelegate.swift */,
+				C45C28A32BFB96710033CCD5 /* Presentation */,
+				C4A8F4642C04C28000347742 /* Infrastructure */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		C4A8F4642C04C28000347742 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				C4A8F4752C04DBFB00347742 /* Domain */,
+				C4A8F4652C04C2A500347742 /* Utils */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		C4A8F4652C04C2A500347742 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C4A8F46D2C04DA7F00347742 /* Manager */,
+				C4A8F4662C04C2AA00347742 /* Storage */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		C4A8F4662C04C2AA00347742 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				C4A8F4672C04C2B800347742 /* SessionStorage.swift */,
+				C4A8F4702C04DAED00347742 /* Main */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		C4A8F46D2C04DA7F00347742 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				C4A8F46E2C04DA9200347742 /* KeychainManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		C4A8F4702C04DAED00347742 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				C4A8F4712C04DAFA00347742 /* UserDefaultsStorage.swift */,
+				C4A8F4732C04DB1000347742 /* KeychainStorage.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		C4A8F4752C04DBFB00347742 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				C4A8F4782C04DC2B00347742 /* Entities */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		C4A8F4782C04DC2B00347742 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				C4A8F4762C04DC1100347742 /* User.swift */,
+				C4A8F4792C04DC5000347742 /* Token.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -554,16 +639,23 @@
 				C45C289C2BFB95EA0033CCD5 /* BaseVM.swift in Sources */,
 				C45C28912BFB693D0033CCD5 /* AppButton.swift in Sources */,
 				C45C28BE2BFB97D60033CCD5 /* VSpacerView.swift in Sources */,
+				C4A8F47A2C04DC5000347742 /* Token.swift in Sources */,
 				C45C28AD2BFB96DD0033CCD5 /* ListItemModel.swift in Sources */,
 				C45C28BC2BFB97B60033CCD5 /* VStackView.swift in Sources */,
+				C4A8F4742C04DB1000347742 /* KeychainStorage.swift in Sources */,
 				C4A8F45E2BFD122000347742 /* EmailFormField.swift in Sources */,
 				C4A8F4602C0225EA00347742 /* PasswordFormField.swift in Sources */,
+				C4A8F46F2C04DA9200347742 /* KeychainManager.swift in Sources */,
+				C4A8F4772C04DC1100347742 /* User.swift in Sources */,
+				C4A8F46C2C04D67F00347742 /* AppDelegate+Extension.swift in Sources */,
 				C45C28A22BFB96410033CCD5 /* BaseCVCell.swift in Sources */,
+				C4A8F4682C04C2B800347742 /* SessionStorage.swift in Sources */,
 				C4A8F45C2BFD0FE600347742 /* FormFieldView.swift in Sources */,
 				C45C28C02BFB97EB0033CCD5 /* HSpacerView.swift in Sources */,
 				C45C28C92BFB985B0033CCD5 /* VScrollView.swift in Sources */,
 				C45C28CB2BFB98700033CCD5 /* ColoredView.swift in Sources */,
 				C45C28C72BFB98310033CCD5 /* BaseView.swift in Sources */,
+				C4A8F4722C04DAFA00347742 /* UserDefaultsStorage.swift in Sources */,
 				C45C28B62BFB977F0033CCD5 /* UINavigationController+Extension.swift in Sources */,
 				C45C28B92BFB979C0033CCD5 /* HStackView.swift in Sources */,
 			);
