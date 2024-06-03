@@ -51,6 +51,7 @@
 		C4A8F4742C04DB1000347742 /* KeychainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A8F4732C04DB1000347742 /* KeychainStorage.swift */; };
 		C4A8F4772C04DC1100347742 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A8F4762C04DC1100347742 /* User.swift */; };
 		C4A8F47A2C04DC5000347742 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A8F4792C04DC5000347742 /* Token.swift */; };
+		C4A8F47D2C0608ED00347742 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A8F47C2C0608ED00347742 /* Router.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,7 @@
 		C4A8F4732C04DB1000347742 /* KeychainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStorage.swift; sourceTree = "<group>"; };
 		C4A8F4762C04DC1100347742 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C4A8F4792C04DC5000347742 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		C4A8F47C2C0608ED00347742 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +208,7 @@
 		C45C28972BFB95C60033CCD5 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				C4A8F47B2C0608DD00347742 /* Router */,
 				C45C28A02BFB96380033CCD5 /* View */,
 				C45C289D2BFB96070033CCD5 /* Controller */,
 				C45C289A2BFB95DE0033CCD5 /* ViewModel */,
@@ -483,6 +486,14 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
+		C4A8F47B2C0608DD00347742 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				C4A8F47C2C0608ED00347742 /* Router.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -641,6 +652,7 @@
 				C45C28BE2BFB97D60033CCD5 /* VSpacerView.swift in Sources */,
 				C4A8F47A2C04DC5000347742 /* Token.swift in Sources */,
 				C45C28AD2BFB96DD0033CCD5 /* ListItemModel.swift in Sources */,
+				C4A8F47D2C0608ED00347742 /* Router.swift in Sources */,
 				C45C28BC2BFB97B60033CCD5 /* VStackView.swift in Sources */,
 				C4A8F4742C04DB1000347742 /* KeychainStorage.swift in Sources */,
 				C4A8F45E2BFD122000347742 /* EmailFormField.swift in Sources */,

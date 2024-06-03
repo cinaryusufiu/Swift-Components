@@ -21,10 +21,10 @@ protocol TokenStorable {
 
 struct SessionStorage {
     
-    @UserDefaultsStorage(key: Key.user.rawValue)
+    @UserDefaultsStorage(key: Key.user.fullPath())
     private(set) var user: User?
     
-    @KeychainStorage(key: Key.token.rawValue)
+    @KeychainStorage(key: Key.token.fullPath())
     private(set) var token: Token?
     
     enum Key: String {

@@ -55,9 +55,16 @@ extension BaseVC {
     }
 }
 
-class BaseVC<T: BaseVM>: UIViewController, BaseVCable {
+typealias CompletionDataHandler = (ModelTransferable) -> Void
+
+class BaseVC<T: BaseVM>: UIViewController, BaseVCable , DataReturnable , CompletionHandling {
     
     //MARK: - Properties
+    var completionDataHandler: CompletionDataHandler?
+    
+    func setCompletionDataHandler(_ handler: @escaping CompletionDataHandler) {
+        self.completionDataHandler = handler
+    }
     
     lazy var disposeBag = DisposeBag()
     var viewModel: T = T()
@@ -169,6 +176,10 @@ class BaseVC<T: BaseVM>: UIViewController, BaseVCable {
         guard let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else { return }
         flowLayout.itemSize = CGSize(width: collectionView.bounds.width, height: 100)
     }
+    
+    func prepareInjectData(_ data: ModelTransferable?) {
+        print(data?.describe() ?? "")
+    }
 }
 
 extension BaseVC {
@@ -276,3 +287,4 @@ extension BaseVC {
         }
     }
 }
+

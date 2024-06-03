@@ -46,7 +46,7 @@ final class HomeVC: BaseVC<HomeVM> {
         config.rightItems = [buttonCollectionList]
         return VCTheme(config: config, title: "Home VC" , pageStyle: .scrollable)
     }
-
+    
     override func prepareUI() {
         super.prepareUI()
         configureAllFormField()
@@ -98,8 +98,8 @@ extension HomeVC {
     
     private func bindUIButtons() {
         
-        buttonTableList.touchUp = { [weak self] (sender) in
-            self?.navigationController?.pushViewController(TableListVC(), animated: true)
+        buttonTableList.touchUp = { (sender) in
+            self.routeToTableListVC()
         }
         
         buttonCollectionList.touchUp = { [weak self] (sender) in
@@ -109,6 +109,18 @@ extension HomeVC {
         buttonConfirm.touchUp = { [weak self] (sender) in
             self?.navigationController?.pushViewController(CollectionListVC(), animated: true)
         }
+    }
+    
+    func routeToTableListVC() {
+        Router.shared.navigate(to: TableListVC.self,
+                               presentationStyle: .present,
+                               withTransferedData: ExampleTransferedData(content: "Homedan data transfer edildi"),
+                               withDataHandler: { data in
+            print("Data Received: \(data.describe())")
+        },
+                               completion: {
+            print("Navigation completed")
+        })
     }
     
     private func bindUIFormFields() {
