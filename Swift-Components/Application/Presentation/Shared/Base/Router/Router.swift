@@ -29,9 +29,9 @@ struct ExampleTransferedData: ModelTransferable {
 
 final class Router {
     
-    static let shared = Router()
+    //static let shared = Router()
     
-    private init() {}
+    init() {}
     
     enum PresentationStyle {
         case push

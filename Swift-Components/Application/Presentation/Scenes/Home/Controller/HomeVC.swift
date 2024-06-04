@@ -15,6 +15,10 @@ final class HomeVC: BaseVC<HomeVM> {
     
     // MARK: - Properties
     
+    //@Inject var router: Router?
+    
+    @Inject(creator: { Router() }) var router: Router?
+    
     private let triggerEmail = PublishSubject<Void>()
     private let triggerNationalID = PublishSubject<Void>()
     private let triggerPassword = PublishSubject<Void>()
@@ -103,7 +107,7 @@ extension HomeVC {
         }
         
         buttonCollectionList.touchUp = { [weak self] (sender) in
-            self?.navigationController?.pushViewController(CollectionListVC(), animated: true)
+            self?.router?.navigate(to: CollectionListVC.self,presentationStyle: .push)
         }
         
         buttonConfirm.touchUp = { [weak self] (sender) in
@@ -112,9 +116,9 @@ extension HomeVC {
     }
     
     func routeToTableListVC() {
-        Router.shared.navigate(to: TableListVC.self,
+        router?.navigate(to: TableListVC.self,
                                presentationStyle: .present,
-                               withTransferedData: ExampleTransferedData(content: "Homedan data transfer edildi"),
+                               withTransferedData: ExampleTransferedData(content: "Home Data"),
                                withDataHandler: { data in
             print("Data Received: \(data.describe())")
         },

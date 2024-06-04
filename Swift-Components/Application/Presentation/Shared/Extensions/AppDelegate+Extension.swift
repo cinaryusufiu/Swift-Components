@@ -10,6 +10,7 @@ import UIKit
 extension AppDelegate {
     
     func configureInfrastructure() {
+       // ServiceLocator.shared.register(Router())
         KeychainManager.configure(withConfig: KeychainManagerConfig(serviceIdentifier: Bundle.main.bundleIdentifier))
         
         //Comment: -Example:

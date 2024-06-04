@@ -52,6 +52,8 @@
 		C4A8F4772C04DC1100347742 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A8F4762C04DC1100347742 /* User.swift */; };
 		C4A8F47A2C04DC5000347742 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A8F4792C04DC5000347742 /* Token.swift */; };
 		C4A8F47D2C0608ED00347742 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A8F47C2C0608ED00347742 /* Router.swift */; };
+		C4A8F4802C0E4C0D00347742 /* Inject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A8F47F2C0E4C0D00347742 /* Inject.swift */; };
+		C4A8F4832C0F554600347742 /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A8F4822C0F554600347742 /* ServiceLocator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +118,8 @@
 		C4A8F4762C04DC1100347742 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C4A8F4792C04DC5000347742 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		C4A8F47C2C0608ED00347742 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		C4A8F47F2C0E4C0D00347742 /* Inject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inject.swift; sourceTree = "<group>"; };
+		C4A8F4822C0F554600347742 /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +212,8 @@
 		C45C28972BFB95C60033CCD5 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				C4A8F4812C0F552E00347742 /* ServiceLocator */,
+				C4A8F47E2C0E4BFD00347742 /* Inject */,
 				C4A8F47B2C0608DD00347742 /* Router */,
 				C45C28A02BFB96380033CCD5 /* View */,
 				C45C289D2BFB96070033CCD5 /* Controller */,
@@ -494,6 +500,22 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		C4A8F47E2C0E4BFD00347742 /* Inject */ = {
+			isa = PBXGroup;
+			children = (
+				C4A8F47F2C0E4C0D00347742 /* Inject.swift */,
+			);
+			path = Inject;
+			sourceTree = "<group>";
+		};
+		C4A8F4812C0F552E00347742 /* ServiceLocator */ = {
+			isa = PBXGroup;
+			children = (
+				C4A8F4822C0F554600347742 /* ServiceLocator.swift */,
+			);
+			path = ServiceLocator;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -636,6 +658,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4A8F45A2BFCF88A00347742 /* BaseLabel.swift in Sources */,
+				C4A8F4832C0F554600347742 /* ServiceLocator.swift in Sources */,
 				C45C28942BFB95820033CCD5 /* TableListVC.swift in Sources */,
 				C45C28862BF79F240033CCD5 /* BaseVC.swift in Sources */,
 				C4A8F4572BFCF18A00347742 /* FormField.swift in Sources */,
@@ -655,6 +678,7 @@
 				C4A8F47D2C0608ED00347742 /* Router.swift in Sources */,
 				C45C28BC2BFB97B60033CCD5 /* VStackView.swift in Sources */,
 				C4A8F4742C04DB1000347742 /* KeychainStorage.swift in Sources */,
+				C4A8F4802C0E4C0D00347742 /* Inject.swift in Sources */,
 				C4A8F45E2BFD122000347742 /* EmailFormField.swift in Sources */,
 				C4A8F4602C0225EA00347742 /* PasswordFormField.swift in Sources */,
 				C4A8F46F2C04DA9200347742 /* KeychainManager.swift in Sources */,
