@@ -19,9 +19,9 @@ final class FormFieldView: BaseView {
     
     // MARK: - UI Properties
     
-    private let labelTitle: TitleLabel = TitleLabel()
-    private let labelMessage: TitleLabel = TitleLabel()
-    private let labelError: TitleLabel = TitleLabel()
+    private let labelTitle: MediumLabel = MediumLabel()
+    private let labelMessage: MediumLabel = MediumLabel()
+    private let labelError: MediumLabel = MediumLabel()
     
     private let viewContainer: ColoredView = {
         let view = ColoredView(backgroundColor: .white)
